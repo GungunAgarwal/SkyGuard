@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction - India Air Quality Prediction</title>
+    <title>Prediction - AI Based pm 2.5 Prediction System</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-wind"></i>
-                <span>AirQuality AI</span>
+                <span>SkyGuard</span>
             </div>
             <button class="nav-toggle" id="navToggle">
                 <i class="fas fa-bars"></i>
@@ -89,7 +89,7 @@
                                 <label for="year">
                                     <i class="fas fa-calendar"></i> Year
                                 </label>
-                                <input type="number" id="year" name="year" min="1990" max="2030" value="2024" required>
+                                <input type="number" id="year" name="year" min="1990" max="2030" value="2026" required>
                             </div>
 
                             <div class="form-group">
@@ -100,13 +100,13 @@
                                     <option value="1">January</option>
                                     <option value="2">February</option>
                                     <option value="3">March</option>
-                                    <option value="4">April</option>
+                                    <option value="4" selected >April</option>
                                     <option value="5">May</option>
                                     <option value="6">June</option>
                                     <option value="7">July</option>
                                     <option value="8">August</option>
                                     <option value="9">September</option>
-                                    <option value="10" selected>October</option>
+                                    <option value="10">October</option>
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
@@ -118,6 +118,7 @@
                                 <i class="fas fa-map-marker-alt"></i> State
                             </label>
                             <select id="state" name="state">
+                                 <option value="Agra">Agra</option>
                                 <option value="Delhi">Delhi</option>
                                 <option value="Maharashtra">Maharashtra</option>
                                 <option value="Karnataka">Karnataka</option>
@@ -274,7 +275,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-wind"></i> AirQuality AI</h3>
+                    <h3><i class="fas fa-wind"></i> SkyGuard</h3>
                     <p>Predicting air quality for a healthier tomorrow using advanced machine learning.</p>
                 </div>
                 <div class="footer-section">
@@ -288,7 +289,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> info@airqualityai.com</p>
+                    <p><i class="fas fa-envelope"></i> info@skyguard.com</p>
                     <p><i class="fas fa-phone"></i> +91 1234567890</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -299,7 +300,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 AirQuality AI. All rights reserved. | Developed by CodeAj Marketplace</p>
+                <p>&copy; 2026 SkyGuard. All rights reserved. </p>
             </div>
         </div>
     </footer>
