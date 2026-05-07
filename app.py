@@ -47,24 +47,26 @@ except Exception as e:
     print("✓ Using default feature info")
 
 # Load sample data for visualization
-DATA_PATH = 'data.csv'
-if os.path.exists(DATA_PATH):
-    try:
-        df = pd.read_csv(DATA_PATH, encoding='latin1')
-        # Handle missing values
-        for col in ['so2', 'no2', 'rspm', 'spm', 'pm2_5']:
-            if col in df.columns:
-                df[col] = pd.to_numeric(df[col], errors='coerce')
-                df[col].fillna(df[col].median(), inplace=True)
-        
+# Load sample data for visualization
+url = "https://drive.google.com/uc?export=download&id=1yXikj9ysPYzGL2dwO0qRW_41V7fs6qo8"
+
+try:
+    df = pd.read_csv(url, low_memory=False)
+
+    # Handle missing values
+    for col in ['so2', 'no2', 'rspm', 'spm', 'pm2_5']:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+            df[col].fillna(df[col].median(), inplace=True)
+
+    if 'date' in df.columns:
         df['date'] = pd.to_datetime(df['date'], errors='coerce')
-        print("✓ Data loaded successfully!")
-        print(f"  Dataset shape: {df.shape}")
-    except Exception as e:
-        print(f"Error loading data: {e}")
-        df = None
-else:
-    print(f"Warning: {DATA_PATH} not found. Visualization features will use sample data.")
+
+    print("✓ Data loaded successfully!")
+    print(f"  Dataset shape: {df.shape}")
+
+except Exception as e:
+    print(f"Error loading data: {e}")
     df = None
 
 @app.route('/')
